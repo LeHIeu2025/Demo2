@@ -1,0 +1,179 @@
+@use 'variables.scss' as *;
+
+.page {
+  padding: 16px 16px 96px 16px;
+}
+
+.section-container {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.zaui-list-item {
+  cursor: pointer;
+}
+
+// Custom styles for order management
+.order-card {
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.status-badge {
+  &.pending {
+    background-color: #fbbf24;
+    color: #92400e;
+  }
+  
+  &.confirmed {
+    background-color: #34d399;
+    color: #065f46;
+  }
+  
+  &.rejected {
+    background-color: #f87171;
+    color: #991b1b;
+  }
+}
+
+.search-box {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  
+  &:focus-within {
+    border-color: var(--company-primary);
+    box-shadow: 0 0 0 3px rgba(4, 161, 179, 0.1);
+  }
+}
+
+:root {
+  --zmp-primary-color: #04A1B3;
+  --zmp-primary-dark-color: #038a9a;
+  --company-primary: #04A1B3;
+  --company-primary-light: #05b8cc;
+  --company-primary-dark: #038a9a;
+  --company-secondary: #3B82F6;
+  --company-secondary-dark: #2563EB;
+}
+
+.zaui-btn-primary {
+  background-color: var(--zmp-primary-color) !important;
+  border-color: var(--zmp-primary-color) !important;
+  color: white !important;
+  
+  &:hover, &:active, &:focus {
+    background-color: var(--zmp-primary-dark-color) !important;
+    border-color: var(--zmp-primary-dark-color) !important;
+  }
+}
+
+.zaui-button {
+  &[data-variant="primary"],
+  &[variant="primary"] {
+    background-color: var(--zmp-primary-color) !important;
+    border-color: var(--zmp-primary-color) !important;
+    color: white !important;
+    
+    &:hover, &:active, &:focus {
+      background-color: var(--zmp-primary-dark-color) !important;
+      border-color: var(--zmp-primary-dark-color) !important;
+    }
+  }
+}
+
+.tab-container {
+  .zaui-tab {
+    border-radius: 8px 8px 0 0;
+    
+    &.active {
+      background-color: var(--company-primary);
+      color: white;
+    }
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  
+  .stat-item {
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    
+    .stat-number {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: #64748b;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    
+    .stat-item {
+      padding: 12px 8px;
+      
+      .stat-number {
+        font-size: 20px;
+      }
+      
+      .stat-label {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+// Global input styles to ensure text visibility on mobile
+.zaui-input,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  
+  &::placeholder {
+    color: #6b7280 !important;
+  }
+  
+  &:focus {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #04A1B3 !important;
+    box-shadow: 0 0 0 3px rgba(4, 161, 179, 0.1) !important;
+  }
+}
+
+// Ensure text is visible in input fields on mobile devices
+input {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-appearance: none;
+  border-radius: 6px;
+  
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
